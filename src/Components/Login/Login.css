@@ -64,3 +64,11 @@
     width: 30px;
     height: 30px;
 }
+
+.signUpText{
+    font-size: 18px !important;
+    text-align: center;
+}
+.signUpText a{
+    text-decoration: none;
+}

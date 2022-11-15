@@ -1,14 +1,14 @@
 import React from 'react';
 import './Login.css';
 import googleLogo from '../../google.svg'
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     return (
         <div>
             <div className="container my-5">
                 <div className="row">
-                    <div className="col-lg-6 mx-auto">
-                        
+                    <div className="col-lg-6 mx-auto">                        
                         <div className=" form-div ">
                         <h2>Log In</h2>
                         <hr style={{marginBottom:"40px"}} />
@@ -22,6 +22,7 @@ const Login = () => {
                                     <input type="password" name="" id=""/>
                                 </div>
                                 <button>Login</button>
+                                <p className="signUpText">Dont Have an Account ? <Link to="/signup">Sign Up Here</Link> </p>
                                 <h4>Or</h4>
                                 <div draggable className="googleButton">
                                     <img src={googleLogo} alt=""/>
