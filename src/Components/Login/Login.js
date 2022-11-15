@@ -23,7 +23,7 @@ const Login = () => {
                                 </div>
                                 <button>Login</button>
                                 <h4>Or</h4>
-                                <div className="googleButton">
+                                <div draggable className="googleButton">
                                     <img src={googleLogo} alt=""/>
                                     <h4>Sign Using Google</h4>
                                 </div>
