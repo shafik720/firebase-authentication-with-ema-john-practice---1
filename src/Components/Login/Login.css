@@ -42,3 +42,25 @@
     background: linear-gradient(45deg,  darkblue, #007ACC);
     color: white;
 }
+.form-div h4{
+    text-align: center;
+    margin: 25px 0;
+}
+
+.googleButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    height: 60px;
+    cursor: pointer;
+}
+.googleButton:hover{
+    border: 3px solid grey;
+}
+.googleButton img{
+    width: 30px;
+    height: 30px;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-import './Login.css'
+import './Login.css';
+import googleLogo from '../../google.svg'
 
 const Login = () => {
     return (
@@ -21,6 +22,11 @@ const Login = () => {
                                     <input type="password" name="" id=""/>
                                 </div>
                                 <button>Login</button>
+                                <h4>Or</h4>
+                                <div className="googleButton">
+                                    <img src={googleLogo} alt=""/>
+                                    <h4>Sign Using Google</h4>
+                                </div>
                             </form>
                         </div>
                     </div>
