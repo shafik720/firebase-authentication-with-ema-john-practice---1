@@ -6,8 +6,10 @@ const Login = () => {
         <div>
             <div className="container my-5">
                 <div className="row">
-                    <div className="col-lg-6">
-                        <div className="">
+                    <div className="col-lg-6 mx-auto">
+                        
+                        <div className=" form-div ">
+                        <h2>Log In</h2>
                             <form action="">
                                 <div className="email-field">
                                     <p>Email :</p>
