@@ -7,6 +7,8 @@ import About from './Components/About/About';
 import Error from './Components/Error/Error';
 import Orders from './Components/Orders/Orders';
 import Login from './Components/Login/Login';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   return (
