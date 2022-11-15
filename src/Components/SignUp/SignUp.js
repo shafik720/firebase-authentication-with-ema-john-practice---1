@@ -21,8 +21,12 @@ const SignUp = () => {
                                     <p>Password :</p>
                                     <input type="password" name="" id=""/>
                                 </div>
+                                <div className="password-field">
+                                    <p>Confirm Password :</p>
+                                    <input type="password" name="" id=""/>
+                                </div>
                                 <button className="sign-up-button">Sign Up</button>
-                                <p className="signUpText">Dont Have an Account ? <Link to="/signup">Sign Up Here</Link> </p>
+                                <p className="signUpText">Already Have an Account ? <Link to="/login">Log in Here</Link> </p>
                                 <h4>Or</h4>
                                 <div draggable className="googleButton">
                                     <img src={googleLogo} alt=""/>
