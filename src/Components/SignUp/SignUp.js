@@ -1,5 +1,7 @@
 import React from 'react';
-import './SignUp.css'
+import './SignUp.css';
+import googleLogo from '../../google.svg'
+import { Link } from 'react-router-dom';
 
 const SignUp = () => {
     return (
@@ -8,7 +10,7 @@ const SignUp = () => {
                 <div className="row">
                     <div className="col-lg-6 mx-auto">                        
                         <div className=" form-div ">
-                        <h2>Log In</h2>
+                        <h2 style={{color:'red'}}>Sign Up</h2>
                         <hr style={{marginBottom:"40px"}} />
                             <form action="">
                                 <div className="email-field">
@@ -19,12 +21,12 @@ const SignUp = () => {
                                     <p>Password :</p>
                                     <input type="password" name="" id=""/>
                                 </div>
-                                <button>Login</button>
+                                <button className="sign-up-button">Sign Up</button>
                                 <p className="signUpText">Dont Have an Account ? <Link to="/signup">Sign Up Here</Link> </p>
                                 <h4>Or</h4>
                                 <div draggable className="googleButton">
                                     <img src={googleLogo} alt=""/>
-                                    <h4>Sign Using Google</h4>
+                                    <h4>Sign in Using Google</h4>
                                 </div>
                             </form>
                         </div>

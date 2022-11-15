@@ -26,7 +26,7 @@ const Login = () => {
                                 <h4>Or</h4>
                                 <div draggable className="googleButton">
                                     <img src={googleLogo} alt=""/>
-                                    <h4>Sign Using Google</h4>
+                                    <h4>Sign in Using Google</h4>
                                 </div>
                             </form>
                         </div>
