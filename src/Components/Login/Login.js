@@ -10,6 +10,7 @@ const Login = () => {
                         
                         <div className=" form-div ">
                         <h2>Log In</h2>
+                        <hr style={{marginBottom:"40px"}} />
                             <form action="">
                                 <div className="email-field">
                                     <p>Email :</p>
