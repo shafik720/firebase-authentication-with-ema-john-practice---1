@@ -20,7 +20,9 @@ const SignUp = () => {
         setConfirmPassword(e.target.value);
     }
 
-    function handleSubmit(e){}
+    function handleSubmit(e){
+        e.preventDefault();
+    }
     return (
         <div>
             <div className="container my-5">
@@ -29,7 +31,7 @@ const SignUp = () => {
                         <div className=" form-div ">
                         <h2 style={{color:'red'}}>Sign Up</h2>
                         <hr style={{marginBottom:"40px"}} />
-                            <form action="">
+                            <form action="" onSubmit={handleSubmit}>
                                 <div className="email-field">
                                     <p>Email :</p>
                                     <input type="email" name="" id=""/>
