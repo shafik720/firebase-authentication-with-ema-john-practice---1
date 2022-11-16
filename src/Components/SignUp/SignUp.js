@@ -25,25 +25,29 @@ const SignUp = () => {
     }
 
     const[createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
+    let navigate = useNavigate();
 
     function handleSubmit(e){
         e.preventDefault();
         if(password.length<6){
              setCustomError('Password Must be more than 6 character');
+             return;
         }
         if(password !== confirmPassword){
-             setCustomError('Confirm Password didnot matched !');
+            setCustomError('Confirm Password didnot matched !');
+            return;
         }
-        if(error){
-             setCustomError(error.message);
-        }
+        
         createUserWithEmailAndPassword(email, password);
-    }
-
-    let navigate = useNavigate();
+        if(loading){
+            setCustomError('');
+            error.message = '';
+        }        
+    }    
     if(user){
-        navigate('/');
+        navigate('/');            
     }
+    
 
     return (
         <div>
@@ -64,12 +68,14 @@ const SignUp = () => {
                                 </div>
                                 <div onBlur={handleConfirmPassword} className="password-field">
                                     <p>Confirm Password :</p>
-                                    <input type="password" name="" id=""/>
+                                    <input type="password" name="" id="" />
                                 </div>                                
                                 <div className="text-center">
-                                    {loading ? <Spinner animation="border" /> : <p style={{color:'red'}}> {customError} </p>}
+                                    { loading && <Spinner animation="border" /> }
+                                    <p style={{ color: 'red' }}> {error?.message} </p>
+                                    <p style={{ color: 'red' }}> {customError} </p>
                                 </div>
-                                <button className="sign-up-button">Sign Up</button>
+                                <button className="sign-up-button" type='submit'>Sign Up</button>
                                 <p className="signUpText">Already Have an Account ? <Link to="/login">Log in Here</Link> </p>
                                 <h4>Or</h4>
                                 <div draggable className="googleButton">
