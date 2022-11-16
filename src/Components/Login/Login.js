@@ -54,10 +54,9 @@ const Login = () => {
                                     <input onBlur={handlePassword} type="password" name="" id="" />
                                 </div>
                                 <div className="text-center">
-                                    { loading ? 
-                                    <Spinner animation="border" /> 
-                                    : 
-                                    <p style={{ color: 'red' }}> {customError} </p>}
+                                    { loading && <Spinner animation="border" /> }
+                                    {error ? <p style={{ color: 'red' }}> {error?.message} </p> : <p style={{ color: 'red' }}> {customError} </p>}                                    
+                                    
                                 </div>
                                 <button>Login</button>
                                 <p className="signUpText">Dont Have an Account ? <Link to="/signup">Sign Up Here</Link> </p>
