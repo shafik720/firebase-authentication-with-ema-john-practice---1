@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Login = () => {
     return (
         <div>
-            <div className="container my-5">
+            <div className="container my-3">
                 <div className="row">
                     <div className="col-lg-6 mx-auto">                        
                         <div className=" form-div ">

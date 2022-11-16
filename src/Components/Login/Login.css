@@ -5,6 +5,8 @@
     border: 3px solid #00008B;
     padding: 25px 25px 30px;
     border-radius: 5px;
+    width: 70%;
+    margin: auto;
 }
 .form-div input{
     width: 100%;
@@ -44,7 +46,7 @@
 }
 .form-div h4{
     text-align: center;
-    margin: 25px 0;
+    margin: 10px 0;
 }
 
 .googleButton{
@@ -71,4 +73,11 @@
 }
 .signUpText a{
     text-decoration: none;
+}
+
+
+@media only screen and (max-width:767px){
+    .form-div{
+        width: 95%;
+    }
 }
