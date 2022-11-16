@@ -8,6 +8,18 @@ const Login = () => {
     const[email, setEmail] = useState('');
     const[password, setPassword] = useState('');
     const[error, setError] = useState('');
+    
+    function handleEmail(e){
+        setEmail(e.target.value);
+    }
+    function handlePassword(e){
+        setPassword(e.target.value);
+    }
+    
+    function handleSubmit(e){
+        e.preventDefault();
+    }
+
     return (
         <div>
             <div className="container my-3">
@@ -16,7 +28,7 @@ const Login = () => {
                         <div className=" form-div ">
                         <h2>Log In</h2>
                         <hr style={{marginBottom:"40px"}} />
-                            <form action="">
+                            <form action="" onSubmit={handleSubmit}>
                                 <div className="email-field">
                                     <p>Email :</p>
                                     <input type="email" name="" id=""/>
