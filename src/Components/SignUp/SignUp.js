@@ -3,6 +3,8 @@ import './SignUp.css';
 import googleLogo from '../../google.svg'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import {useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init'
 
 const SignUp = () => {
     const[email, setEmail] = useState('');
@@ -20,6 +22,8 @@ const SignUp = () => {
         setConfirmPassword(e.target.value);
     }
 
+    const[createUserWithEmailAndPassword, user, loading, error,] = useCreateUserWithEmailAndPassword(auth);
+
     function handleSubmit(e){
         e.preventDefault();
         if(password.length<6){
@@ -29,6 +33,8 @@ const SignUp = () => {
             setCustomError('Confirm Password didnot matched !');
         }
     }
+
+
     return (
         <div>
             <div className="container my-5">
