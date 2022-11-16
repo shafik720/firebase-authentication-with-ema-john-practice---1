@@ -2,8 +2,25 @@ import React from 'react';
 import './SignUp.css';
 import googleLogo from '../../google.svg'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const SignUp = () => {
+    const[email, setEmail] = useState('');
+    const[password, setPassword] = useState('');
+    const[confirmPassword, setConfirmPassword] = useState('');
+    const[customError, setCustomError] = useState('');
+    
+    function handleEmail(e){
+        setEmail(e.target.value);
+    }
+    function handlePassword(e){
+        setPassword(e.target.value);
+    }
+    function handleConfirmPassword(e){
+        setConfirmPassword(e.target.value);
+    }
+
+    function handleSubmit(e){}
     return (
         <div>
             <div className="container my-5">
