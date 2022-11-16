@@ -9,6 +9,7 @@ import Orders from './Components/Orders/Orders';
 import Login from './Components/Login/Login';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import SignUp from './Components/SignUp/SignUp';
+import RequireAuth from './Components/RequireAuth/RequireAuth';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
         <Route path="/" element={<Body></Body>}></Route>
         <Route path="/home" element={<Body></Body>}></Route>
         <Route path="/about" element={<About></About>}></Route>
-        <Route path="/orders" element={<Orders></Orders>}></Route>
+        <Route path="/orders" element={<RequireAuth><Orders></Orders></RequireAuth>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>
         <Route path="/signup" element={<SignUp></SignUp>}></Route>
         <Route path="*" element={<Error></Error>}></Route>

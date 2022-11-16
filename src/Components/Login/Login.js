@@ -1,7 +1,7 @@
 import React from 'react';
 import './Login.css';
 import googleLogo from '../../google.svg'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -29,8 +29,11 @@ const Login = () => {
     }
 
     let navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
     if(user){
-        navigate('/');
+        // navigate('/');
+        navigate(from, { replace: true });
     }
 
     return (
