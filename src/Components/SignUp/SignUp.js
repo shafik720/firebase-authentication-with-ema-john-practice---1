@@ -1,10 +1,12 @@
 import React from 'react';
 import './SignUp.css';
 import googleLogo from '../../google.svg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import {useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init'
+import auth from '../../firebase.init';
+import Spinner from 'react-bootstrap/Spinner';
+
 
 const SignUp = () => {
     const[email, setEmail] = useState('');
@@ -27,13 +29,21 @@ const SignUp = () => {
     function handleSubmit(e){
         e.preventDefault();
         if(password.length<6){
-            setCustomError('Password Must be more than 6 character');
+             setCustomError('Password Must be more than 6 character');
         }
         if(password !== confirmPassword){
-            setCustomError('Confirm Password didnot matched !');
+             setCustomError('Confirm Password didnot matched !');
         }
+        if(error){
+             setCustomError(error.message);
+        }
+        createUserWithEmailAndPassword(email, password);
     }
 
+    let navigate = useNavigate();
+    if(user){
+        navigate('/');
+    }
 
     return (
         <div>
@@ -55,8 +65,11 @@ const SignUp = () => {
                                 <div onBlur={handleConfirmPassword} className="password-field">
                                     <p>Confirm Password :</p>
                                     <input type="password" name="" id=""/>
+                                </div>                                
+                                <div className="text-center">
+                                    {loading && <Spinner animation="border" />}
+                                    <p style={{color:'red'}}> {customError} </p>
                                 </div>
-                                <p style={{color:'red'}}> {customError} </p>
                                 <button className="sign-up-button">Sign Up</button>
                                 <p className="signUpText">Already Have an Account ? <Link to="/login">Log in Here</Link> </p>
                                 <h4>Or</h4>
