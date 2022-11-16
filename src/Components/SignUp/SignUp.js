@@ -22,6 +22,12 @@ const SignUp = () => {
 
     function handleSubmit(e){
         e.preventDefault();
+        if(password.length<6){
+            setCustomError('Password Must be more than 6 character');
+        }
+        if(password !== confirmPassword){
+            setCustomError('Confirm Password didnot matched !');
+        }
     }
     return (
         <div>
@@ -32,18 +38,19 @@ const SignUp = () => {
                         <h2 style={{color:'red'}}>Sign Up</h2>
                         <hr style={{marginBottom:"40px"}} />
                             <form action="" onSubmit={handleSubmit}>
-                                <div className="email-field">
+                                <div onBlur={handleEmail} className="email-field">
                                     <p>Email :</p>
                                     <input type="email" name="" id=""/>
                                 </div>
-                                <div className="password-field">
+                                <div onBlur={handlePassword} className="password-field">
                                     <p>Password :</p>
                                     <input type="password" name="" id=""/>
                                 </div>
-                                <div className="password-field">
+                                <div onBlur={handleConfirmPassword} className="password-field">
                                     <p>Confirm Password :</p>
                                     <input type="password" name="" id=""/>
                                 </div>
+                                <p style={{color:'red'}}> {customError} </p>
                                 <button className="sign-up-button">Sign Up</button>
                                 <p className="signUpText">Already Have an Account ? <Link to="/login">Log in Here</Link> </p>
                                 <h4>Or</h4>
