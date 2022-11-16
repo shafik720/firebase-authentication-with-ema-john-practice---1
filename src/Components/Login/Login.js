@@ -2,8 +2,12 @@ import React from 'react';
 import './Login.css';
 import googleLogo from '../../google.svg'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Login = () => {
+    const[email, setEmail] = useState('');
+    const[password, setPassword] = useState('');
+    const[error, setError] = useState('');
     return (
         <div>
             <div className="container my-3">
