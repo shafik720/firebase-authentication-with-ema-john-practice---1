@@ -67,8 +67,7 @@ const SignUp = () => {
                                     <input type="password" name="" id=""/>
                                 </div>                                
                                 <div className="text-center">
-                                    {loading && <Spinner animation="border" />}
-                                    <p style={{color:'red'}}> {customError} </p>
+                                    {loading ? <Spinner animation="border" /> : <p style={{color:'red'}}> {customError} </p>}
                                 </div>
                                 <button className="sign-up-button">Sign Up</button>
                                 <p className="signUpText">Already Have an Account ? <Link to="/login">Log in Here</Link> </p>
